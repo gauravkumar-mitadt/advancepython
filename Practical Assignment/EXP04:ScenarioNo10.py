@@ -1,18 +1,18 @@
 import random
 
-# 48 hours vehicle data
+
 traffic = [random.randint(80, 200) for i in range(48)]
 
 print("Traffic Data:", traffic)
 
-# Day vs Night
+
 day = traffic[:24]
 night = traffic[24:]
 
 print("Day Average:", sum(day) / 24)
 print("Night Average:", sum(night) / 24)
 
-# Moving Average (DP concept)
+
 window = 3
 dp = []
 s = sum(traffic[:window])

@@ -4,7 +4,7 @@ import random
 reward = [random.randint(10, 100) for i in range(8)]
 print("City Rewards:", reward)
 
-# Bottom-up DP
+
 dp = [0] * len(reward)
 dp[0] = reward[0]
 dp[1] = max(reward[0], reward[1])
@@ -15,7 +15,7 @@ for i in range(2, len(reward)):
 print("Maximum Reward:", dp[-1])
 
 
-# Recursive approach
+
 def rob(i):
     if i >= len(reward):
         return 0

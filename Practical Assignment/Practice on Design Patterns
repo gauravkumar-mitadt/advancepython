@@ -1,0 +1,29 @@
+class User:
+    def __init__(self, name):
+        self.name = name
+
+    def update(self, message):
+        print(self.name, ":", message)
+
+
+class Channel:
+    def __init__(self):
+        self.users = []
+
+    def subscribe(self, user):
+        self.users.append(user)
+
+    def notify(self, message):
+        for user in self.users:
+            user.update(message)
+
+
+channel = Channel()
+
+u1 = User("Rahul")
+u2 = User("Aman")
+
+channel.subscribe(u1)
+channel.subscribe(u2)
+
+channel.notify("New video uploaded!")
